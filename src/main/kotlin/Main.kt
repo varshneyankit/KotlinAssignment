@@ -3,7 +3,7 @@
  *
  */
 fun main() {
-    val year = 2000
+    val year = 1900
     if (isLeapYear(year)) println("$year is a leap year") else println("$year is not a leap year")
 }
 
@@ -13,12 +13,4 @@ fun main() {
  * @param year The year which is to be analysed
  * @return Boolean Whether given year is a leap year or not.
  */
-fun isLeapYear(year: Int): Boolean {
-    if (year % 400 == 0)
-        return true
-    if (year % 100 == 0)
-        return false
-    if (year % 4 == 0)
-        return true
-    return false
-}
+fun isLeapYear(year: Int) = year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)
