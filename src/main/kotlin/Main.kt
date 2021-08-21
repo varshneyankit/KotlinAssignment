@@ -1,11 +1,9 @@
-import java.util.*
-
 /**
  * Main function where the execution starts
  *
  */
 fun main() {
-    val string = "nsmlpoiquwrayzcbmnxkalsgetabdjhwgru ^iweyghfj& bdnjvbn mzx"
+    val string = "abcdefg hij klmn opqrs tu vwxyz"
     println("String: $string is a pangram?  ${isPangram(string)} ")
 }
 
@@ -15,7 +13,17 @@ fun main() {
  * @param string The string which is to be analysed
  * @return Boolean Whether given string is a pangram or not.
  */
-fun isPangram(string: String): Boolean{
-    val lowerString = string.lowercase(Locale.getDefault())
-    return ('a'..'z').all { it in lowerString }
+fun isPangram(string: String): Boolean {
+    val arr = Array(26) { false }
+    string.lowercase().forEach {
+        if (it in 'a'..'z') {
+            val index = it - 'a'
+            arr[index] = true
+        }
+    }
+    for (c in arr.indices)
+        if (!arr[c])
+            return false
+
+    return true
 }
