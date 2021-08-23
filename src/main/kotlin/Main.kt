@@ -16,7 +16,7 @@ fun main() {
 fun isPangram(string: String): Boolean {
     val arr = Array(26) { false }
     string.lowercase().forEach {
-        if (it in 'a'..'z') {
+        if (it >= 'a' && it <= 'z') {
             val index = it - 'a'
             arr[index] = true
         }
