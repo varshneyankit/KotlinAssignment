@@ -1,29 +1,21 @@
-/**
- * Main function where the execution starts
- *
- */
 fun main() {
-    val string = "abcdefg hij klmn opqrs tu vwxyz"
-    println("String: $string is a pangram?  ${isPangram(string)} ")
-}
-
-/**
- * Returns a Boolean whether a string is pangram
- *
- * @param string The string which is to be analysed
- * @return Boolean Whether given string is a pangram or not.
- */
-fun isPangram(string: String): Boolean {
-    val arr = Array(26) { false }
-    string.lowercase().forEach {
-        if (it >= 'a' && it <= 'z') {
-            val index = it - 'a'
-            arr[index] = true
-        }
-    }
-    for (c in arr.indices)
-        if (!arr[c])
-            return false
-
-    return true
+    val doublyLinkedList = DoublyLinkedList<Int>()
+    doublyLinkedList.insertAtStart(2)
+    println("Inserted at start $doublyLinkedList")
+    doublyLinkedList.insertAtStart(5)
+    println("Inserted at start $doublyLinkedList")
+    doublyLinkedList.insertAtEnd(1)
+    println("Inserted at end$doublyLinkedList")
+    doublyLinkedList.insertAtEnd(3)
+    println("Inserted at end $doublyLinkedList")
+    doublyLinkedList.insertAtIndex(10,1)
+    println("Inserted at index 1 $doublyLinkedList")
+    doublyLinkedList.insertAtIndex(4,3)
+    println("Inserted at index 3 $doublyLinkedList")
+    doublyLinkedList.removeFirst()
+    println("Remove from start $doublyLinkedList")
+    doublyLinkedList.removeLast()
+    println("Remove from end $doublyLinkedList")
+    doublyLinkedList.removeAtIndex(2)
+    println("Remove from index 2 $doublyLinkedList")
 }
