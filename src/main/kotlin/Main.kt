@@ -1,3 +1,6 @@
+/**
+ * This function is used to execute and test the implementation of doubly linked list.
+ */
 fun main() {
     val doublyLinkedList = DoublyLinkedList<Int>()
     doublyLinkedList.insertAtStart(2)
@@ -8,9 +11,9 @@ fun main() {
     println("Inserted at end$doublyLinkedList")
     doublyLinkedList.insertAtEnd(3)
     println("Inserted at end $doublyLinkedList")
-    doublyLinkedList.insertAtIndex(10,1)
+    doublyLinkedList.insertAtIndex(10, 1)
     println("Inserted at index 1 $doublyLinkedList")
-    doublyLinkedList.insertAtIndex(4,3)
+    doublyLinkedList.insertAtIndex(4, 3)
     println("Inserted at index 3 $doublyLinkedList")
     doublyLinkedList.removeFirst()
     println("Remove from start $doublyLinkedList")

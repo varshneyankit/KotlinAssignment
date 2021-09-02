@@ -1,16 +1,36 @@
+/**
+ * This class implements the Doubly Linked List.
+ *
+ * @param T the type of data which is accepted by this class *
+ */
 class DoublyLinkedList<T> {
 
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
     private var length = 0
 
+    /**
+     * This class contains node which is used by outer class.
+     *
+     * @param T the type of data which is accepted by this class.
+     */
     class Node<T>(var data: T) {
         var next: Node<T>? = null
         var previous: Node<T>? = null
     }
 
-    private fun isEmpty(): Boolean = head == null || length == 0
+    /**
+     * This function checks whether the doubly linked is empty.
+     *
+     * @return Boolean is returned after checking the conditions.
+     */
+    private fun isEmpty(): Boolean = head == null && tail == null && length == 0
 
+    /**
+     * This function overrides the toString function
+     *
+     * @return String is returned.
+     */
     override fun toString(): String {
         return if (isEmpty())
             "List is empty"
@@ -27,6 +47,11 @@ class DoublyLinkedList<T> {
         }
     }
 
+    /**
+     * This function inserts data at the start of doubly linked list.
+     *
+     * @param data of type T is required by this function.
+     */
     fun insertAtStart(data: T) {
         val newNode = Node(data)
         if (isEmpty())
@@ -39,6 +64,11 @@ class DoublyLinkedList<T> {
         length++
     }
 
+    /**
+     * This function inserts data at the end of doubly linked list.
+     *
+     * @param data of type T is required by this function.
+     */
     fun insertAtEnd(data: T) {
         val newNode = Node(data)
         if (isEmpty())
@@ -51,6 +81,12 @@ class DoublyLinkedList<T> {
         length++
     }
 
+    /**
+     * This function inserts data at given index of doubly linked list.
+     *
+     * @param data of type T is required by this function.
+     * @param index of type Int is required by this function.
+     */
     fun insertAtIndex(data: T, index: Int) {
         val newNode = Node(data)
         if (isEmpty()) {
@@ -81,9 +117,12 @@ class DoublyLinkedList<T> {
         }
     }
 
+    /**
+     * This function removes data at the start of doubly linked list.
+     */
     fun removeFirst() {
         when {
-            isEmpty()-> print("List is empty")
+            isEmpty() -> print("List is empty")
             length == 1 -> {
                 head = null
                 tail = null
@@ -97,6 +136,9 @@ class DoublyLinkedList<T> {
         }
     }
 
+    /**
+     * This function removes data at the end of doubly linked list.
+     */
     fun removeLast() {
         when {
             isEmpty() -> print("List is empty")
@@ -113,10 +155,15 @@ class DoublyLinkedList<T> {
         }
     }
 
+    /**
+     * This function removes data at given index of doubly linked list.
+     *
+     * @param index of type Int is required by this function.
+     */
     fun removeAtIndex(index: Int) {
         if (isEmpty())
             print("List is empty")
-        else{
+        else {
             if (index < length && index >= 0) {
                 when (index) {
                     0 -> removeFirst()
@@ -139,4 +186,3 @@ class DoublyLinkedList<T> {
         }
     }
 }
-
