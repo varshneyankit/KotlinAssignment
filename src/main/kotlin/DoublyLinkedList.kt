@@ -31,8 +31,8 @@ class DoublyLinkedList<T> {
      *
      * @return String is returned.
      */
-    override fun toString(): String {
-        return if (isEmpty())
+    override fun toString(): String =
+        if (isEmpty())
             "List is empty"
         else {
             var string = "[ "
@@ -45,7 +45,7 @@ class DoublyLinkedList<T> {
             }
             "$string ]"
         }
-    }
+
 
     /**
      * This function inserts data at the start of doubly linked list.
